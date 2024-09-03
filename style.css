@@ -1,0 +1,172 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3e5f5;
+    color: #333;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.navbar {
+    border-bottom: 3px solid #6a1b9a;
+    background-color: #6a1b9a;
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: #e1bee7;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #f3e5f5;
+}
+
+.dropdown-menu {
+    border-radius: 0.75rem;
+    background-color: #6a1b9a;
+    color: #ffffff;
+}
+
+.dropdown-menu a {
+    color: #ffffff;
+}
+
+.dropdown-menu a:hover {
+    background-color: #8e24aa;
+}
+
+.card {
+    border-radius: 1.5rem;
+    border: 1px solid #ab47bc;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    background-color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    color: #6a1b9a;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.weather-summary {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.weather-summary h3 {
+    font-size: 2rem;
+    color: #6a1b9a;
+}
+
+.weather-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.weather-table th, .weather-table td {
+    border: 1px solid #ab47bc;
+    padding: 12px;
+    text-align: center;
+}
+
+.weather-table th {
+    background-color: #e1bee7;
+    color: #333;
+}
+
+.weather-table tr:nth-child(even) {
+    background-color: #f3e5f5;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    padding: 1rem 0;
+}
+
+.slider::-webkit-scrollbar {
+    height: 10px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+    background-color: #6a1b9a;
+    border-radius: 5px;
+}
+
+.slider::-webkit-scrollbar-thumb:hover {
+    background-color: #8e24aa;
+}
+
+#search-button:hover {
+    background-color: #8e24aa;
+    color: #ffffff;
+    border-color: #8e24aa;
+}
+
+footer {
+    background-color: #6a1b9a;
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 3px solid #ab47bc;
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+    }
+    
+    .weather-summary h3 {
+        font-size: 1.75rem;
+    }
+}

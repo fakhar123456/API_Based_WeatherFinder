@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get up-to-date weather information for various cities with our Weather App. Explore current conditions, temperature, and more with ease.">
+    <title>Weather App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <a class="navbar-brand" href="#">Weather App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html" aria-label="Home Page">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-card">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About this app
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">About This App</h5>
+                                    <p class="card-text">Our Weather App provides up-to-date weather information for various cities. Explore current conditions, temperature, and more with ease.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown dropdown-card">
+                        <a class="nav-link dropdown-toggle" href="#" id="howToUseDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            How to use?
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="howToUseDropdown">
+                            <div class="card mt-2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Simple steps:</h5>
+                                    <p class="card-text">Explore advanced features like weather forecasts, detailed weather summaries, and customization options to tailor the app to your needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <form class="form-inline ml-2" id="search-form">
+                            <input class="form-control mr-sm-2" type="search" id="city-input" placeholder="Search for a city" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-button">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <!-- Weather Cards -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weather Details</h5>
+                        <p class="card-text">Location: <span id="location"></span></p>
+                        <p class="card-text">Temperature (°F): <span id="temp_f"></span></p>
+                        <p class="card-text">Temperature (°C): <span id="temp_c"></span></p>
+                        <p class="card-text">Condition: <span id="condition"></span></p>
+                        <p class="card-text">Wind Speed (mph): <span id="wind_mph"></span></p>
+                        <p class="card-text">Wind Speed (kph): <span id="wind_kph"></span></p>
+                        <p class="card-text">Pressure (mb): <span id="pressure_mb"></span></p>
+                        <p class="card-text">Pressure (in): <span id="pressure_in"></span></p>
+                        <p class="card-text">Humidity (%): <span id="humidity"></span></p>
+                        <p class="card-text">Precipitation (mm): <span id="precip_mm"></span></p>
+                        <p class="card-text">Precipitation (in): <span id="precip_in"></span></p>
+                        <p class="card-text">Feels Like (°C): <span id="feelslike_c"></span></p>
+                        <p class="card-text">Feels Like (°F): <span id="feelslike_f"></span></p>
+                        <p class="card-text">Wind Chill (°C): <span id="windchill_c"></span></p>
+                        <p class="card-text">Wind Chill (°F): <span id="windchill_f"></span></p>
+                        <p class="card-text">Heat Index (°C): <span id="heatindex_c"></span></p>
+                        <p class="card-text">Heat Index (°F): <span id="heatindex_f"></span></p>
+                        <p class="card-text">Dewpoint (°C): <span id="dewpoint_c"></span></p>
+                        <p class="card-text">Dewpoint (°F): <span id="dewpoint_f"></span></p>
+                        <p class="card-text">Visibility (km): <span id="vis_km"></span></p>
+                        <p class="card-text">Visibility (miles): <span id="vis_miles"></span></p>
+                        <p class="card-text">UV Index: <span id="uv"></span></p>
+                        <p class="card-text">Gust Speed (mph): <span id="gust_mph"></span></p>
+                        <p class="card-text">Gust Speed (kph): <span id="gust_kph"></span></p>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <!-- Weather Summary Table -->
+        <section class="weather-summary">
+            <h3>Weather Summary of the Last 10 Days</h3>
+            <div class="slider-container">
+                <div class="slider">
+                    <table class="weather-table">
+                        <!-- Table content here -->
+                    </table>
+                </div>
+            </div>
+            <div class="slider-container">
+                <div class="slider">
+                    <table class="weather-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>City</th>
+                                <th>Temp (°C)</th>
+                                <th>Temp (°F)</th>
+                                <th>Feels Like (°C)</th>
+                                <th>Feels Like (°F)</th>
+                                <th>Humidity (%)</th>
+                                <th>Pressure (mb)</th>
+                                <th>Wind Speed (kph)</th>
+                                <th>Wind Speed (mph)</th>
+                                <th>Precipitation (mm)</th>
+                                <th>Precipitation (in)</th>
+                                <th>UV Index</th>
+                                <th>Visibility (km)</th>
+                                <th>Visibility (miles)</th>
+                                <th>Wind Chill (°C)</th>
+                                <th>Wind Chill (°F)</th>
+                                <th>Heat Index (°C)</th>
+                                <th>Heat Index (°F)</th>
+                                <th>Dewpoint (°C)</th>
+                                <th>Dewpoint (°F)</th>
+                                <th>Gust Speed (kph)</th>
+                                <th>Gust Speed (mph)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody id="weather-summary-body">
+                                
+                           </tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class=" text-white text-center py-3">
+        <p>&copy; 2024 Weather App. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
